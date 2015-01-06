@@ -1,0 +1,93 @@
+<!-- Carousel Design from Bootstrap Examples -->
+<div id="myCarousel" class="carousel slide" data-interval="7500" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="item active">
+            <%= image_tag("red.jpg", alt: 'All Pokemon') %>
+        </div> <!-- item active -->
+    </div> <!-- carousel-inner -->
+  
+</div> <!-- carousel slide --> 
+
+<div class="container marketing">
+    <div class="row featurette"> <!-- FIRST ROW --> 
+        
+        <div class="col-md-5">
+            <%= image_tag("pokemon-starters.png", class: "featurette-image img-responsive") %>
+        </div> <!-- col-md-5 -->
+
+        <div class="col-md-7" style="margin-bottom: 25px; ">
+            <h2 class="featurette-heading"> Train Your Pokemon! </h2>
+            <p class="lead">
+                Better log all those hard hours of training to be the best!
+            </p> 
+            <%= link_to("Train", nsbemon_train_path, class: "btn btn-info") %>   
+        </div> <!-- col-md-7 -->
+
+    </div> <!-- row featurette --> 
+    
+    <hr class="featurette-divider">
+
+    <div class="row featurette"> <!-- SECOND ROW -->
+    
+        <div class="col-md-7" style="margin-bottom: 25px; ">
+            <h2 class="featurette-heading"> Update your Profile! </h2>
+            <p class="lead">
+                Let us know who you are!
+            </p> 
+
+            <% if exists? current_user.profile %>
+                <%= link_to "Update Profile", edit_user_profile_path(current_user) , class: "btn btn-info" %>
+            <% else %>
+                <%= link_to "New Profile", new_user_profile_path(current_user), class: "btn btn-info" %>   
+            <% end %>
+        </div> <!-- col-md-7 -->
+
+        <div class="col-md-5">
+            <%= image_tag("BlankTrainerCard.png", class: "featurette-image img-responsive") %>
+        </div> <!-- col-md-5 -->
+
+    </div> <!-- row featurette --> 
+    
+    <hr class="featurette-divider">
+
+
+    <div class="row featurette"> <!-- THIRD ROW -->
+        
+        <div class="col-md-5">
+            <%= image_tag("teams.jpg", class: 'featurette-image img-responsive') %>
+        </div> <!-- col-md-5 -->
+
+        <div class="col-md-7">
+            <h2 class="featurette-heading"> Meet all the NSBEmon Teams! </h2>
+            <p class="lead">
+                See who has the most badass team in the 
+                neighborhood.
+            </p>    
+            <%= link_to("Teams", team_index_path, class: "btn btn-info") %>
+        </div> <!-- col-md-7 -->
+        
+    </div> <!-- row featurette --> 
+    
+    <!-- Put a divider between the two icons --> 
+    <hr class="featurette-divider"> 
+        
+    <div class="row featurette"> <!-- FOURTH ROW -->
+    
+        <div class="col-md-7" style="margin-bottom: 25px; ">
+            <h2 class="featurette-heading"> Meet all the NSBEmon Trainers! </h2>
+            <p class="lead">
+                Come look at all the stories of these amazing and hard working 
+                individuals!
+            </p> 
+            <%= link_to("Trainers", user_index_path, class: "btn btn-info") %>   
+        </div> <!-- col-md-7 -->
+
+        <div class="col-md-5">
+            <%= image_tag("trainers.jpg", class: "featurette-image img-responsive") %>
+        </div> <!-- col-md-5 -->
+
+    </div> <!-- row featurette --> 
+    
+    <hr class="featurette-divider">
+        
+</div> <!-- container marketing --> 

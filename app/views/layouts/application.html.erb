@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "NSBEwebSiteRails" %></title>
+    <%= csrf_meta_tags %>
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <%= stylesheet_link_tag "application", :media => "all", "data-turbolinks-track" => true %>
+
+    <!-- For third-generation iPad with high-resolution Retina display: -->
+    <!-- Size should be 144 x 144 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
+
+    <!-- For iPhone with high-resolution Retina display: -->
+    <!-- Size should be 114 x 114 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
+
+    <!-- For first- and second-generation iPad: -->
+    <!-- Size should be 72 x 72 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
+
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <!-- Size should be 57 x 57 pixels -->
+    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
+
+    <!-- For all other devices -->
+    <!-- Size should be 32 x 32 pixels -->
+    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Navigation Bar Section -->
+      <div class="navbar navbar-default" role="navigation"> 
+        <div class="container">
+          <!-- Main Logo -->  
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+            data-target=".navbar-collapse">
+              <span class="sr-only">Toggle Navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand"> 
+              <!-- NSBE logo  --> 
+              <%= image_tag("nsbe-logo.jpeg", alt: 'NSBE Logo', width: 115, height: 55) %>
+            </a>
+          </div> <!-- navbar-header -->
+      
+          <!-- Navigation Elements --> 
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li> <%= link_to("Home", root_path) %> </li>
+              <li> <%= link_to("Board", welcome_members_path) %> </li>
+              <li> <%= link_to("About", welcome_about_path) %> </li>
+              <li class='dropdown'> 
+                <a href="#" class='dropdown-toggle' data-toggle='dropdown' style='background-color: rgba(0,0,0,0);'>
+                  NSBEmon
+                  <span class='caret'></span>
+                </a>
+                <ul class='dropdown-menu' role='menu' style='background-color: rgba(70, 140, 215, .90);'> 
+                  <li>
+                    <%= link_to("About", welcome_about_nsbemon_path) %>
+                  </li>
+                  <li>
+                    <%= link_to('Training Grounds', nsbemon_main_path) %> 
+                  </li>
+                </ul>
+            </ul> 
+            <p class="navbar-text pull-right">
+                  <% if user_signed_in? %>
+                    Logged in as <strong><%= current_user.email %></strong>.
+                    <%= link_to 'Edit_Profile', edit_user_registration_path, style:'color: #FFFFFF;' %> |
+                    <%= link_to 'Logout', destroy_user_session_path, method: :delete , style:'color: #FFFFFF;' %>
+                  <% else %>
+                    <%= link_to "Sign up", new_user_registration_path, style:'color: #FFFFFF;' %> |
+                    <%= link_to "Login", new_user_session_path, style:'color: #FFFFFF;' %>
+                  <% end %>
+                </p>
+          </div> <!-- navbar-collapse collapse -->
+        </div> <!-- container -->
+      </div> <!-- navbar navbar-inverse navbar-static-top -->
+
+      <% if notice %>
+        <p class="alert alert-success "><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+
+      <%= yield %>
+
+      <!-- <div class="push"></div> -->
+    </div>
+
+    <div class="footer">
+      <div class="container">
+        <p class="muted credit">
+          NSBE at UCLA with Love &#9829
+        </p>
+      </div>
+    </div>
+
+  </body>
+</html>

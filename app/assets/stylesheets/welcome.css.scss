@@ -1,0 +1,324 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Place all the styles related to the Welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*******************
+********************
+GLOBAL WELCOME PAGES
+********************
+********************/ 
+body ul {
+    font-size: 14pt;
+    color: rgb(255, 225, 55);
+}
+html,body{
+    height: 100%;
+}
+/********************
+*********************
+CUSTOMIZE THE NAVBAR
+*********************
+*********************/
+.navbar {
+    border-width: 0px; 
+    padding-right: 15px;
+    padding-left: 15px;
+    width: auto;
+    border-radius: 0px;
+    margin-bottom: 0px;  
+}
+
+/*********************
+Controls the NSBE logo 
+**********************/
+.navbar-brand {
+    padding-top: 5px;    
+
+    img {
+        border-radius: 12px; 
+    }
+}
+.nav { 
+    margin: 8px 0px 8px 0px; 
+}
+.navbar-toggle {
+    margin: 16px 0px 16px 0px; 
+}
+
+.navbar-text.pull-right {
+    color: white;
+    margin-top: 25px; 
+}
+
+/*********************
+CHANGE COLOR OF NAVBAR 
+**********************/
+.navbar.navbar-default {
+    background-color: rgba(70, 140, 215, .90);
+    border-color: rgb(105, 210, 231);
+}
+
+ul.nav a {
+    color: #fff !important; 
+}
+
+ul.nav a:hover { color: rgb(255, 225, 55) !important; }
+
+/**************************
+***************************
+ CUSTOMIZE THE CAROUSEL
+***************************
+***************************/
+@media (min-width:200px) {
+    /* WHEN PAGE IS SMALL, DON'T SHOW CAROUSEL*/
+    .carousel {
+        display: none;   
+        top: -100px; 
+        height: 250px;
+        margin-bottom: -150px; 
+        width: 100%; 
+    }
+    .youtube-player {
+        height: 275px; 
+        width: 300px; 
+        margin-top: 25px; 
+    }
+    /* PUSH CAPTION TO THE TOP */
+    .carousel-caption {
+        z-index: 10;
+    }
+    /* RESIZE CAROUSEL IMAGE BASED ON SCREEN SIZE */
+    .item {
+        height: 250px;
+        background-color: #999;
+    }
+    .carousel-inner > .item > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        min-width: 100%; 
+    }
+    .carousel-indicators {
+        bottom: 5px;        
+    }
+    @media (min-width: 600px) {
+        .carousel {
+            height: 375px; 
+            display: block; 
+            margin-bottom: 0px; 
+            margin-top: 100px;  
+        }
+        .youtube-player {
+        height: 350px; 
+        width: 450px; 
+        margin-top: 25px; 
+        }
+        .item {
+            height: 375px; 
+        }
+        .carousel-indicators {
+            bottom: 10px;       
+        }  
+        @media (min-width: 880px) {
+            .carousel {
+                height: 550px;  
+            }
+            .youtube-player {
+                height: 450px; 
+                width: 600px; 
+                margin-top: 25px; 
+            }
+            .item {
+                height: 550px; 
+            }
+        }           
+    }   
+}
+/****************************
+*****************************
+CUSTOMIZE THE MEMBERS PAGE
+*****************************
+*****************************/
+/* Add some rounded borders to images in the main page */
+#bodyImage {
+    border-radius: 10px; 
+}
+#memberSection {
+     margin-top: 50px;        
+}
+/*******************************
+COLUMN CONTROL FOR MEMBERSPAGE
+*******************************/
+.col-lg-4, .col-lg-12, .col-lg-6{
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+/********************************************
+CHANGE CHARACTERISTICS OF MEMBERS PAGE TITLES
+********************************************/
+#memberTitles {
+    color: rgb(105, 210, 231); 
+}
+/*********************************************
+WRAPS EVERY MEMBERSPAGE PICTURE INTO A WRAPPER
+TO HELP OVERLAP THE ICONS
+**********************************************/
+.pictureWrapper {
+    height: 200px; 
+    width: 200px; 
+    margin-right: auto; 
+    margin-left: auto;
+}
+/*****************
+INDIVIDUAL MEMBERS
+******************/
+.pictureWrapper.img-circle.sadhus {
+    background-image: image-url("sadhus.jpeg");
+    background-position: center;  
+    background-size: 200px 200px; 
+}
+.pictureWrapper.img-circle.alejandro_alvarado {
+    background-image: image-url("nsbeMembers/alejandro_alvarado.jpg");
+    background-position: center;  
+    background-size: 200px 200px; 
+}
+.pictureWrapper.img-circle.nicole_asuncion {
+    background-image: image-url("nsbeMembers/nicole_asuncion.jpg");
+    background-position: center;  
+    background-size: 200px 200px; 
+}
+.pictureWrapper.img-circle.eric_cooper {
+    background-image: image-url("nsbeMembers/eric_cooper.jpg");
+    background-position: center;  
+    background-size: 200px 200px; 
+}
+.pictureWrapper.img-circle.abdelbagi_gieballa {
+    background-image: image-url("nsbeMembers/abdelbagi_gieballa.jpg");
+    background-position: center;  
+    background-size: 200px 200px; 
+}
+.pictureWrapper.img-circle.hadiza_mango {
+    background-image: image-url("nsbeMembers/hadiza_mango.jpg");
+    background-position: center;  
+    background-size: 200px 200px; 
+}
+.pictureWrapper.img-circle.jordan_abel {
+    background-image: image-url("nsbeMembers/jordan_abel.jpg");
+    background-position: center;  
+    background-size: 200px 200px; 
+}
+.pictureWrapper.img-circle.rolake_omoya {
+    background-image: image-url("nsbeMembers/rolake_omoya.jpg");
+    background-position: center;  
+    background-size: 200px 200px; 
+}
+.pictureWrapper.img-circle.roselin_campos {
+    background-image: image-url("nsbeMembers/roselin_campos.jpg");
+    background-position: center;  
+    background-size: 200px 200px; 
+}
+/***************** 
+MEMBER PAGE LOGOS
+******************/
+.facebookLogo { 
+    position: absolute; 
+    width: 50px; 
+    height: 50px;
+    margin-top: 95px;
+    margin-left: 115px; 
+    border-radius: 7px;  
+    background: #FFF; 
+    opacity: 0; 
+}
+.linkedinLogo {
+    position: absolute; 
+    width: 50px; 
+    height: 50px;
+    margin-top: 95px;
+    margin-left: 35px; 
+    border-radius: 7px;  
+    background: #FFF; 
+    opacity: 0; 
+}
+.gmailLogo {
+    position: absolute; 
+    width: 70px; 
+    height: 50px;
+    margin-top: 25px;
+    margin-left: 65px; 
+    border-radius: 7px;  
+    background: #FFF; 
+    opacity: 0; 
+}
+/******************************* 
+MEMBER PAGE LOGOS HOVER CONTROL
+********************************/
+.pictureWrapper:hover .linkedinLogo {
+    opacity: 1; 
+    text-align: justify;
+    background-image: image_url("linkedinLogo.png"); 
+    background-position: center; 
+    background-size: 50px 50px;  
+}
+.pictureWrapper:hover .gmailLogo {
+    opacity: 1; 
+    text-align: justify;
+    background-image: image_url("gmailLogo.png"); 
+    background-position: center; 
+    background-size: 70px 50px;  
+}
+.pictureWrapper:hover .facebookLogo {
+    opacity: 1; 
+    text-align: justify;
+    background-image: image_url("facebookLogo.png"); 
+    background-position: center; 
+    background-size: 50px 50px; 
+}
+/************************
+MEMBER PAGE HOVER CONTROL
+*************************/
+.pictureWrapper.img-circle:hover {
+    background: rgba(105, 210, 231, .5); 
+}
+
+/**************
+***************
+FOOTER CONTROL
+***************
+***************/
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+.wrapper {
+    min-height: 100%;
+    height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+    height: 100%;
+    margin: 0 auto -30px; /* the bottom margin is the negative value of the footer's height */
+}
+.footer{
+    background-color: #f5f5f5;
+    //height: 30px; /* .push must be the same height as .footer */
+    padding-top: 15px; 
+}
+
+/*
+
+Sticky Footer by Ryan Fait
+http://ryanfait.com/
+
+*/
+
+
+
+
+
+
+
+

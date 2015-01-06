@@ -1,0 +1,10 @@
+// Place all the styles related to the Team controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.pictureWrapper.epicredteam {
+    background-image: image-url("epicredteam.jpg");
+    background-position: center;  
+    background-size: 200px 200px; 
+    border-radius: 100px; 
+}

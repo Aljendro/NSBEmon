@@ -1,0 +1,2 @@
+module NsbemonHelper
+end

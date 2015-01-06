@@ -1,0 +1,54 @@
+<!-- Carousel Design from Bootstrap Examples -->
+<div id="myCarousel" class="carousel slide" data-interval="7500" data-ride="carousel">
+    <!-- Small circle indicators at base of carousel -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <%= image_tag("royce-hall.jpg", alt: 'Royce Hall') %>
+        </div> <!-- item active -->
+    </div> <!-- carousel-inner -->
+</div> <!-- carousel slide --> 
+
+<!-- NSBE Main features --> 
+    <div class="container marketing">
+        <!-- This will become the NSBEmon icon section -->
+        <div class="row featurette">
+            <div class="col-md-5">
+                <%= image_tag("pokemon-starters.png", class: 'featurette-image img-responsive') %>
+            </div> <!-- col-md-5 -->
+
+            <div class="col-md-7">
+                <h2 class="featurette-heading"> Sign up for NSBEmon today! </h2>
+                <p class="lead">
+                    Join NSBEmon and you can start training your pokemon
+                    to battle the Elite Four today!
+                </p> 
+                <%= link_to("NSBEmon", new_user_registration_path, class: "btn btn-info") %>   
+            </div> <!-- col-md-7 -->   
+            
+        </div> <!-- row featurette --> 
+        
+        <!-- Put a divider between the two icons --> 
+        <hr class="featurette-divider"> 
+            
+        <!-- This will become the member icon section -->       
+        <div class="row featurette">
+            
+            <div class="col-md-5">
+                <%= image_tag("nsbe-group-photo.jpg", id: "bodyImage", class: "featurette-image img-responsive") %>
+            </div> <!-- col-md-5 -->
+
+            <div class="col-md-7">
+                <h2 class="featurette-heading"> Meet the NSBE Board! </h2>
+                <p class="lead">
+                    Come look at all the stories of these amazing and hard working 
+                    individuals!
+                </p>    
+                <%= link_to("Board", welcome_members_path, class: "btn btn-info") %>
+            </div> <!-- col-md-7 -->
+        </div> <!-- row featurette --> 
+        
+        <!-- Put a divider between the two icons --> 
+        <hr class="featurette-divider"><br><br>
+
+                    
+    </div> <!-- container marketing --> 

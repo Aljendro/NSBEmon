@@ -1,0 +1,15 @@
+<div class="container">  
+  <div class="row">
+    <div class="col-lg-12">
+      <%= image_tag("teams.jpg", class: 'featurette-image img-responsive') %>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<% if exists? @teams %>
+  <div class="team">
+    <%= render partial: "team", collection: @teams %>
+  </div>
+<% end %>
