@@ -6,12 +6,11 @@ class NsbemonController < ApplicationController
   end
 
   def train
-    @select = []
-  end
-
-  private 
+    @select = current_user
+  end 
 
   def add_amounts
     puts "Hello"
   end
+  
 end

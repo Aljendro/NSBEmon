@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 
   get 'nsbemon/train'
 
+  patch 'nsbemon/add_amounts'
+
   resources :team
 
   resources :user do 

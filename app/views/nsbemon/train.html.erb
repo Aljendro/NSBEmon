@@ -1,4 +1,4 @@
-  <%= form_tag('/train', method: "get") do %>
+  <%= form_for @select, url: { action: "add_amounts"} do |f| %>
     
     <div class="row"> 
       <div class="col-lg-12">
@@ -8,68 +8,15 @@
 
     <div class="row">
       <div class="col-lg-12">
-        <h3> In-Class Gym</h3>
+        <%= check_box_tag 'accept', '1' %>
+        <%= label_tag "Accept" %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12">
+        <%= f.submit "Log Training" %>
+      </div>
+    </div>
   
-        <%= check_box('1', :add_amounts)%>
-        <%= label :user, 'Asked a question in class when I didn\'t understand what was going on' %>
-
-        <%= check_box('2', :add_amounts)%>
-        <%= label :user, 'Asked a question in class when I didn\'t understand what was going on' %>
-
-
-        <!--"Asked a question in class when I didn't understand what was going on"
-        "Seized break opportunity to talk to the professor further about a subject"
-        "For end of quarter: Haven't missed a discussion for a single class all quarter"
-        "For end of quarter: Haven't missed a class for one course all quarter"-->
-
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-12">
-        <h3> The Professor Gym </h3>
-
-        <%= select_tag("The Professor Gym",
-          options_for_select([ 
-          "Emailed TA or Professor with Question",
-          "Attended Office Hours",
-          "Professor Knows Me by Name (can only be filled out once for each class)",
-          "Submitted paper for regrade and gained points",
-          "Set up an appointment with TA or Professor
-          outside of normal Office Hours and attended it"
-          ])) %>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-12">
-        <h3> The Study Habits Gym </h3>
-
-        <%= select_tag( "The Study Habits Gym",
-          options_for_select([
-          "Completed homework at least two days early",
-          "Reviewed Notes before & after class",
-          "Read textbook in conjunction with lecture",
-          "Did extra problems for practice",
-          "Taught another person a subject", 
-          "Planned and facilitated a group study session"
-          ]))%>
-      </div>
-    </div>
-
-     <div class="row">
-      <div class="col-lg-12">
-        <h3> The Study Habits Gym </h3>
-
-        <%= select_tag( "The Study Habits Gym",
-          options_for_select([
-          "Improved on a Quiz Score",
-          "Improved on a Midterm Score",
-          "Got higher than class median over the standard deviation on a quiz or midterm",
-          "(For End of Quarter) Improved Overall GPA",
-          "Reached goal GPA"
-          ])) %>
-      </div>
-    </div>
-
   <% end %>
