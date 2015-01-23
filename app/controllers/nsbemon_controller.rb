@@ -10,7 +10,16 @@ class NsbemonController < ApplicationController
   end 
 
   def add_amounts
-    puts "Hello"
+    accept = params[:accept]
+
+    if accept != nil
+      puts "Accept value: " + accept
+      current_user.experience = accept
+      current_user.save
+    else 
+      puts "Accept value: nil"
+    end
+
   end
   
 end

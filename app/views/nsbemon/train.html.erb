@@ -1,4 +1,4 @@
-  <%= form_for @select, url: { action: "add_amounts"} do |f| %>
+  <%= form_tag({controller: "nsbemon", action: "add_amounts"}, method: "patch" ) do %>
     
     <div class="row"> 
       <div class="col-lg-12">
@@ -15,8 +15,7 @@
 
     <div class="row">
       <div class="col-lg-12">
-        <%= f.submit "Log Training" %>
+        <%= submit_tag "Log Training" %>
       </div>
     </div>
-  
-  <% end %>
+<% end %>
