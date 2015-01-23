@@ -1,17 +1,72 @@
   <%= form_tag({controller: "nsbemon", action: "add_amounts"}, method: "patch" ) do %>
     
-    <div class="row"> 
-      <div class="col-lg-12">
-        <h1> NSBEmon Training </h1>
-      </div>
-    </div> 
+    <%= render :layout => "begin" do %>
+      <h1><u>NSBEmon Training</u></h1>
+    <% end %>
 
-    <div class="row">
-      <div class="col-lg-12">
-        <%= check_box_tag 'accept', '1' %>
-        <%= label_tag "Accept" %>
-      </div>
-    </div>
+    <%= render :layout => "begin" do %>
+      <h1> Gym: In Class </h1>
+    <% end %>
+
+    <%= render :layout => "begin" do %>
+      <%= check_box_tag 'in_class_1', '1' %>
+      <%= label_tag "Sat in the front row" %>
+    <% end %>
+
+    <%= render :layout => "begin" do %>
+        <%= check_box_tag 'in_class_2', '1' %>
+        <%= label_tag "Asked a question in class" %>
+    <% end %>
+
+    <%= render :layout => "begin" do %>
+        <%= check_box_tag 'in_class_3', '1' %>
+        <%= label_tag "Talked to the professor during the break" %>
+    <% end %>
+    
+    <%= render :layout => "begin" do %>
+        <%= check_box_tag 'in_class_4', '1' %>
+        <%= label_tag "Did not miss a discussion during the quarter" %>
+    <% end %>
+
+    <%= render :layout => "begin" do %>
+        <%= check_box_tag 'in_class_5', '1' %>
+        <%= label_tag "Did not miss a lecture during the quarter" %>
+    <% end %>
+
+    <%= render :layout => "begin" do %>
+      <h1> Gym: The Professor </h1>
+    <% end %>
+
+    <%= render :layout => "begin" do %>
+        <%= check_box_tag 'professor_1', '1' %>
+        <%= label_tag "Emailed TA or Professor with question" %>
+    <% end %>  
+
+    <%= render :layout => "begin" do %>
+        <%= check_box_tag 'professor_2', '1' %>
+        <%= label_tag "Attended Office Hour" %>
+    <% end %> 
+
+    <%= render :layout => "begin" do %>
+        <%= check_box_tag 'professor_3', '1' %>
+        <%= label_tag "Professor knows my name" %>
+    <% end %>     
+
+    <%= render :layout => "begin" do %>
+        <%= check_box_tag 'professor_4', '1' %>
+        <%= label_tag "Submitted paper for regrade and gained points" %>
+    <% end %>     
+
+    <%= render :layout => "begin" do %>
+        <%= check_box_tag 'professor_5', '1' %>
+        <%= label_tag "Emailed TA or Professor with question" %>
+    <% end %>     
+
+    <%= render :layout => "begin" do %>
+        <%= check_box_tag 'professor_6', '1' %>
+        <%= label_tag "Set up appointment with Professor" %>
+    <% end %> 
+
 
     <div class="row">
       <div class="col-lg-12">
