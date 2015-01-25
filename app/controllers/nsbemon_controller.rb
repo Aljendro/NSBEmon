@@ -10,16 +10,25 @@ class NsbemonController < ApplicationController
   end 
 
   def add_amounts
-    accept = params[:accept]
+    
+    params.each do |key, value|
+      if (key.to_s[/personal.*/])
+        current_user.experience += 5  
+      end
 
-    if accept != nil
-      puts "Accept value: " + accept
-      current_user.experience = accept
-      current_user.save
-    else 
-      puts "Accept value: nil"
+      if (key.to_s[/study.*/])
+        current_user.experience += 10
+      end
+
+      if (key.to_s[/professor.*/])
+        current_user.experience += 20
+      end
+
+      if (key.to_s[/in_class.*/])
+        current_user.experience += 15
+      end
     end
-
+    current_user.save
   end
   
 end
