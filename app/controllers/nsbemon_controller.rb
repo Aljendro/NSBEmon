@@ -13,22 +13,24 @@ class NsbemonController < ApplicationController
     
     params.each do |key, value|
       if (key.to_s[/personal_\d/])
-        current_user.experience += 5  
+        current_user.experience += 20  
       end
 
       if (key.to_s[/study_\d/])
-        current_user.experience += 10
+        current_user.experience += 15
       end
 
       if (key.to_s[/professor_\d/])
-        current_user.experience += 20
+        current_user.experience += 10
       end
 
       if (key.to_s[/in_class_\d/])
-        current_user.experience += 15
+        current_user.experience += 5
       end
     end
     current_user.save
+
+    redirect_to nsbemon_main_path, notice: "Successfully logged points"
   end
   
 end
