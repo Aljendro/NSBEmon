@@ -1,128 +1,130 @@
-  <%= form_tag({controller: "nsbemon", action: "add_amounts"}, method: "patch" ) do %>
-    
-    <%= render :layout => "begin" do %>
-      <h1><u>NSBEmon Training</u></h1>
+<div class='border-form-div'>
+    <%= form_tag({controller: "nsbemon", action: "add_amounts"}, method: "patch" ) do %>
+        
+        <%= render :layout => "begin" do %>
+          <h1>NSBEmon Training</h1>
+        <% end %>
+
+        <%= render :layout => "begin" do %>
+          <h3> Gym: In Class </h3>
+        <% end %>
+
+        <%= render :layout => "begin" do %>
+          <%= check_box_tag 'in_class_1', '1' %>
+          <%= label_tag "Sat in the front row" %>
+        <% end %>
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'in_class_2', '1' %>
+            <%= label_tag "Asked a question in class" %>
+        <% end %>
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'in_class_3', '1' %>
+            <%= label_tag "Talked to the professor during the break" %>
+        <% end %>
+        
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'in_class_4', '1' %>
+            <%= label_tag "Did not miss a discussion during the quarter" %>
+        <% end %>
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'in_class_5', '1' %>
+            <%= label_tag "Did not miss a lecture during the quarter" %>
+        <% end %>
+
+        <%= render :layout => "begin" do %>
+          <h3> Gym: The Professor </h3>
+        <% end %>
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'professor_1', '1' %>
+            <%= label_tag "Emailed TA or Professor with question" %>
+        <% end %>  
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'professor_2', '1' %>
+            <%= label_tag "Attended Office Hour" %>
+        <% end %> 
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'professor_3', '1' %>
+            <%= label_tag "Professor knows my name" %>
+        <% end %>     
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'professor_4', '1' %>
+            <%= label_tag "Submitted paper for regrade and gained points" %>
+        <% end %>     
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'professor_5', '1' %>
+            <%= label_tag "Emailed TA or Professor with question" %>
+        <% end %>     
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'professor_6', '1' %>
+            <%= label_tag "Set up appointment with Professor" %>
+        <% end %> 
+
+        <%= render :layout => "begin" do %>
+          <h3> Gym: Study Habits </h3>
+        <% end %>
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'study_1', '1' %>
+            <%= label_tag "Completed homework at least two days in advance" %>
+        <% end %> 
+
+         <%= render :layout => "begin" do %>
+            <%= check_box_tag 'study_2', '1' %>
+            <%= label_tag "Reviewed Notes before and after class" %>
+        <% end %> 
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'study_3', '1' %>
+            <%= label_tag "Read textbook" %>
+        <% end %> 
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'study_4', '1' %>
+            <%= label_tag "Did extra problems apart from homework" %>
+        <% end %> 
+
+        <%= render :layout => "begin" do %>
+            <h3> Gym: Personal Best </h3>
+        <% end %> 
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'personal_1', '1' %>
+            <%= label_tag "Improved quiz score" %>
+        <% end %> 
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'personal_2', '1' %>
+            <%= label_tag "Improved midterm score" %>
+        <% end %> 
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'personal_3', '1' %>
+            <%= label_tag "Did better than my peers in a midterm" %>
+        <% end %> 
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'personal_4', '1' %>
+            <%= label_tag "Improved GPA" %>
+        <% end %> 
+
+        <%= render :layout => "begin" do %>
+            <%= check_box_tag 'personal_5', '1' %>
+            <%= label_tag "Reached goal GPA" %>
+        <% end %> 
+
+        <div class="row">
+          <div class="col-lg-12">
+            <%= submit_tag "Log Training", class: 'btn btn-primary'%>
+          </div>
+        </div>
     <% end %>
-
-    <%= render :layout => "begin" do %>
-      <h1> Gym: In Class </h1>
-    <% end %>
-
-    <%= render :layout => "begin" do %>
-      <%= check_box_tag 'in_class_1', '1' %>
-      <%= label_tag "Sat in the front row" %>
-    <% end %>
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'in_class_2', '1' %>
-        <%= label_tag "Asked a question in class" %>
-    <% end %>
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'in_class_3', '1' %>
-        <%= label_tag "Talked to the professor during the break" %>
-    <% end %>
-    
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'in_class_4', '1' %>
-        <%= label_tag "Did not miss a discussion during the quarter" %>
-    <% end %>
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'in_class_5', '1' %>
-        <%= label_tag "Did not miss a lecture during the quarter" %>
-    <% end %>
-
-    <%= render :layout => "begin" do %>
-      <h1> Gym: The Professor </h1>
-    <% end %>
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'professor_1', '1' %>
-        <%= label_tag "Emailed TA or Professor with question" %>
-    <% end %>  
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'professor_2', '1' %>
-        <%= label_tag "Attended Office Hour" %>
-    <% end %> 
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'professor_3', '1' %>
-        <%= label_tag "Professor knows my name" %>
-    <% end %>     
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'professor_4', '1' %>
-        <%= label_tag "Submitted paper for regrade and gained points" %>
-    <% end %>     
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'professor_5', '1' %>
-        <%= label_tag "Emailed TA or Professor with question" %>
-    <% end %>     
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'professor_6', '1' %>
-        <%= label_tag "Set up appointment with Professor" %>
-    <% end %> 
-
-    <%= render :layout => "begin" do %>
-      <h1> Gym: Study Habits </h1>
-    <% end %>
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'study_1', '1' %>
-        <%= label_tag "Completed homework at least two days in advance" %>
-    <% end %> 
-
-     <%= render :layout => "begin" do %>
-        <%= check_box_tag 'study_2', '1' %>
-        <%= label_tag "Reviewed Notes before and after class" %>
-    <% end %> 
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'study_3', '1' %>
-        <%= label_tag "Read textbook" %>
-    <% end %> 
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'study_4', '1' %>
-        <%= label_tag "Did extra problems apart from homework" %>
-    <% end %> 
-
-    <%= render :layout => "begin" do %>
-        <h1> Gym: Personal Best </h1>
-    <% end %> 
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'personal_1', '1' %>
-        <%= label_tag "Improved quiz score" %>
-    <% end %> 
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'personal_2', '1' %>
-        <%= label_tag "Improved midterm score" %>
-    <% end %> 
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'personal_3', '1' %>
-        <%= label_tag "Did better than my peers in a midterm" %>
-    <% end %> 
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'personal_4', '1' %>
-        <%= label_tag "Improved GPA" %>
-    <% end %> 
-
-    <%= render :layout => "begin" do %>
-        <%= check_box_tag 'personal_5', '1' %>
-        <%= label_tag "Reached goal GPA" %>
-    <% end %> 
-
-    <div class="row">
-      <div class="col-lg-12">
-        <%= submit_tag "Log Training" %>
-      </div>
-    </div>
-<% end %>
+</div>
