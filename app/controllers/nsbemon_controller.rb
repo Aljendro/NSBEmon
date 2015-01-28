@@ -28,6 +28,9 @@ class NsbemonController < ApplicationController
         current_user.experience += 5
       end
     end
+
+    current_user.level = 10 + (current_user.experience / 50)
+
     current_user.save
 
     redirect_to nsbemon_main_path, notice: "Successfully logged points"
