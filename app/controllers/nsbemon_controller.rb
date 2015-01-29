@@ -11,23 +11,7 @@ class NsbemonController < ApplicationController
 
   def add_amounts
     
-    params.each do |key, value|
-      if (key.to_s[/personal_\d/])
-        current_user.experience += 20  
-      end
-
-      if (key.to_s[/study_\d/])
-        current_user.experience += 15
-      end
-
-      if (key.to_s[/professor_\d/])
-        current_user.experience += 10
-      end
-
-      if (key.to_s[/in_class_\d/])
-        current_user.experience += 5
-      end
-    end
+    params.each { |key, value| add_points(value) }
 
     current_user.level = 10 + (current_user.experience / 50)
 
@@ -35,5 +19,11 @@ class NsbemonController < ApplicationController
 
     redirect_to nsbemon_main_path, notice: "Successfully logged points"
   end
-  
+
+  private
+
+  def add_points(point_amount)
+    current_user.experience += point_amount.to_i
+  end
+    
 end
