@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140925181435) do
+ActiveRecord::Schema.define(version: 20150129063754) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20140925181435) do
     t.string   "major"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "trainer_name"
   end
 
   create_table "team_badges", force: true do |t|
