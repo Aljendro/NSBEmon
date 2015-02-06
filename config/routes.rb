@@ -15,6 +15,8 @@ Rails.application.routes.draw do
 
   patch 'nsbemon/add_amounts'
 
+  get 'user/admin_page'
+
   resources :team
 
   resources :user do 
