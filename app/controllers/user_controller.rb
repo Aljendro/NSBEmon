@@ -11,6 +11,12 @@ class UserController < ApplicationController
     @user_profile = @user.profile
   end
 
+  def admin_page
+    
+    
+    @users = User.all
+  end
+
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
