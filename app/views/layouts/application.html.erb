@@ -74,6 +74,11 @@
                   <li>
                     <%= link_to('Training Grounds', nsbemon_main_path) %> 
                   </li>
+                  <li>
+                    <% if current_user.try(:admin?) %>
+                      <%= link_to('Admin Page', user_admin_page_path) %> 
+                    <% end %>
+                  </li>
                 </ul>
             </ul> 
             <p class="navbar-text pull-right">
