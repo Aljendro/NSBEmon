@@ -1,1 +1,12 @@
-<%= "Hello there man" %>
+<div class='border-form-div'>
+
+  <% @users.each do |user| %>
+    <tr>
+        <td>
+          <%= user.email %><br>
+          <%= user.experience %><br>
+          <%= user.profile.first_name %><br>
+        </td>
+    </tr>
+  <% end %>
+</div>

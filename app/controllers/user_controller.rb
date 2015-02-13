@@ -12,8 +12,6 @@ class UserController < ApplicationController
   end
 
   def admin_page
-    
-    
     @users = User.all
   end
 
