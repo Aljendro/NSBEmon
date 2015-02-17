@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
   has_one :pokemon
   belongs_to :team 
+  has_one :record, dependant: :destroy
 
 end
