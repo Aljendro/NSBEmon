@@ -1,10 +1,15 @@
-  <% @users.each do |user| %>
+<% @users.each do |user| %>
     <tr>
-        <td>
-          User email: <%= user.email %>
-          User experience: <%= user.experience %>
-          User First Name: <%= user.profile.first_name %>
-        </td>
+      <th> User email: <%= user.email %> </th>
+      <th> User experience: <%= user.experience %> </th>
+      <th> User First Name: <%= user.profile.first_name %> </th>
+    </tr>
+    <tr>
+      <% user.record.each do |r| %>
+        <% r.checked_boxes.each do |box| %>
+          <%= box %>
+        <% end %>
+      <% end %>
     </tr>
   <% end %>
 </div>
