@@ -10,8 +10,24 @@ class NsbemonController < ApplicationController
   end 
 
   def add_amounts
-    
-    params.each { |key, value| add_points(value) }
+    #Create a record for ADMIN
+    new_record = current_user.record.create(checked_boxes: [])
+    new_record.checked_boxes_will_change!
+
+    params.each do |key, value| 
+      if (key.to_s[/nsbe_\w+/])
+        add_points(value)
+
+        new_record.checked_boxes << key.to_s
+      end
+    end
+
+    #Check if the array actually changed
+    if new_record.checked_boxes.empty?
+      new_record.destroy
+    else
+      new_record.save!
+    end
 
     current_user.level = 10 + (current_user.experience / 50)
 
