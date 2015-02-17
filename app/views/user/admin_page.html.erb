@@ -1,11 +1,9 @@
-<div class='border-form-div'>
-
   <% @users.each do |user| %>
     <tr>
         <td>
-          <%= user.email %><br>
-          <%= user.experience %><br>
-          <%= user.profile.first_name %><br>
+          User email: <%= user.email %>
+          User experience: <%= user.experience %>
+          User First Name: <%= user.profile.first_name %>
         </td>
     </tr>
   <% end %>
