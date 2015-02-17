@@ -3,8 +3,7 @@ class CreateRecords < ActiveRecord::Migration
     create_table :records do |t|
       t.integer :user_id
       t.string :record, array: true, default: []
-      t.string :record_timestamp, array: true, default: []
-
+      
       t.timestamps
     end
   end
