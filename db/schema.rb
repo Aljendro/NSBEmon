@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20150217040711) do
 
   create_table "records", force: true do |t|
     t.integer  "user_id"
-    t.string   "record",     default: [], array: true
+    t.string   "checked_boxes", default: [], array: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
