@@ -16,7 +16,7 @@
           <% r.checked_boxes.each do |box| %>
               <td> <%= box %> </td>
           <% end %>
-          <td> <%= r.created_at %> </td>
+          <td> <b><%= r.created_at.localtime.strftime("%e %b %Y %H:%M:%S") %></b> </td>
         </tr>
       <% end %>
     </table>
