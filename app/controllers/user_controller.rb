@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+  before_filter :check_privileges!, only: [:admin_page]
 
   # GET /users
   def index
@@ -19,5 +20,9 @@ class UserController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:level, :experience)
+    end
+
+    def check_privileges!
+      redirect_to "/", notice: 'You don not have superUser privileges' unless current_user and current_user.try(:admin?)
     end
 end
