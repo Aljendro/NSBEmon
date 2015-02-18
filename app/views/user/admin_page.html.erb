@@ -1,15 +1,24 @@
 <% @users.each do |user| %>
-    <tr>
-      <th> User email: <%= user.email %> </th>
-      <th> User experience: <%= user.experience %> </th>
-      <th> User First Name: <%= user.profile.first_name %> </th>
-    </tr>
-    <tr>
-      <% user.record.each do |r| %>
-        <% r.checked_boxes.each do |box| %>
-          <%= box %>
-        <% end %>
+  <div class="table-responsive">
+    <table class="table">
+        <tr>
+          <td> <b>User email: <%= user.email %></b> </td>
+          <td> <b>User experience: <%= user.experience %></b> </td>
+          <td> <b>User First Name: <%= user.profile.first_name %></b> </td>
+        </tr>
+    </table>
+  </div>
+ 
+  <div class="table-responsive" style="overflow-x:auto;">
+    <table class="table table-striped">
+      <% user.record[0...5].reverse.each do |r| %>
+        <tr>
+          <% r.checked_boxes.each do |box| %>
+              <td> <%= box %> </td>
+          <% end %>
+          <td> <%= r.created_at %> </td>
+        </tr>
       <% end %>
-    </tr>
-  <% end %>
-</div>
+    </table>
+  </div>
+<% end %>
