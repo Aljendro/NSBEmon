@@ -10,7 +10,7 @@
   <%= f.text_field :trainer_name %><br>
 
   <%= f.label :gpa %><br>
-  <%= f.number_field :gpa, :step => 0.01, :max => 4.00 %><br><br>
+  <%= f.number_field :gpa, :step => 0.01, :max => 4.00, :min => 0.00 %><br><br>
 
   <%= f.label :graduation_year %><br>
   <%= f.select :graduation_year, 
