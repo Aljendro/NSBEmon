@@ -13,8 +13,8 @@
     <table class="table table-striped">
       <% user.record[0...5].reverse.each do |r| %>
         <tr>
-          <% r.checked_boxes.each do |box| %>
-              <td> <%= box %> </td>
+          <% r.checked_boxes.zip(r.point_values).each do |box, value| %>
+              <td> <%= box[5, box.length] + " : " + value + " pts" %> </td>
           <% end %>
           <td> <b><%= r.created_at.localtime.strftime("%e %b %Y %H:%M:%S") %></b> </td>
         </tr>
