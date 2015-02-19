@@ -1,3 +1,12 @@
+<%= form_tag(controller: "user", action: "add_sub_values") do %>
+  <%= select_tag 'Trainer', options_from_collection_for_select(@users, 'id', 'email') %>
+
+  <%= number_field("Points", value = 0, in: -500..500, step: 10 )%>
+
+  <%= submit_tag("Add amount") %>
+
+<% end %>
+
 <% @users.each do |user| %>
   <div class="table-responsive">
     <table class="table">
