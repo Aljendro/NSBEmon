@@ -16,7 +16,32 @@ class UserController < ApplicationController
     @users = User.all
   end
 
-  private
+  def add_sub_values
+
+    trainer = nil
+    points = 0
+
+    params.each do |key, val| 
+      if key == "Trainer"
+        trainer = User.find(val)
+      end
+
+      if key ==  "Points"
+        points = val["0"].to_i unless val["0"].empty?
+      end
+    end
+
+    if ((points != 0) && ((trainer.experience + points) >= 0))
+      trainer.experience += points
+      trainer.save
+      redirect_to user_admin_page_path, notice: "Successfully updated values"
+      return 
+    end
+
+    redirect_to user_admin_page_path, alert: "Input empty or too negative!"
+  end
+
+ private
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:level, :experience)
