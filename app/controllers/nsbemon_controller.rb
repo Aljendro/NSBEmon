@@ -12,19 +12,22 @@ class NsbemonController < ApplicationController
   def add_amounts
 
     temp_record = []
+    temp_score  = []
 
     params.each do |key, value| 
       if (key.to_s[/nsbe_\w+/])
         add_points(value)
 
         temp_record << key.to_s
+        temp_score  << value.to_s
       end
     end
 
     #Check if the array actually changed
     if !temp_record.empty?
       #Create a record for ADMIN
-      new_record = current_user.record.create(checked_boxes: temp_record) 
+      new_record = current_user.record.create( checked_boxes: temp_record, 
+                                               point_values: temp_score) 
     end
 
     current_user.level = 10 + (current_user.experience / 50)
