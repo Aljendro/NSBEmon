@@ -15,7 +15,9 @@ Rails.application.routes.draw do
 
   patch 'nsbemon/add_amounts'
 
-  post 'user/admin_page'
+  post 'user/add_sub_values'
+
+  get 'user/admin_page'
 
   resources :team
 
