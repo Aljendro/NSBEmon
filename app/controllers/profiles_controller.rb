@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
   
   # GET /profiles/new
   def new
-    @profile = Profile.new
+    @profile = current_user.create_profile
   end
 
   # POST /profiles
