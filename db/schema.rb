@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150225203709) do
+ActiveRecord::Schema.define(version: 20150225203831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,11 +69,6 @@ ActiveRecord::Schema.define(version: 20150225203709) do
   create_table "users_and_pokemons", id: false, force: true do |t|
     t.integer "user_id"
     t.integer "pokemon_id"
-  end
-
-  create_table "users_and_trainer_badges", id: false, force: true do |t|
-    t.integer "user_id"
-    t.integer "trainer_badge_id"
   end
 
 end
