@@ -3,7 +3,7 @@ class UserController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    @users = User.order("experience DESC").all
   end
 
   # GET /users/1
