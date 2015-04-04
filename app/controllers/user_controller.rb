@@ -48,6 +48,6 @@ class UserController < ApplicationController
     end
 
     def check_privileges!
-      redirect_to "/", notice: 'You don not have superUser privileges' unless current_user and current_user.try(:admin?)
+      redirect_to "/", notice: 'You do not have superUser privileges' unless current_user and current_user.try(:admin?)
     end
 end
