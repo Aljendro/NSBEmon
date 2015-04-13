@@ -60,17 +60,12 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li> <%= link_to("Home", root_path) %> </li>
-              <li> <%= link_to("Board", welcome_members_path) %> </li>
-              <li> <%= link_to("About", welcome_about_path) %> </li>
               <li class='dropdown'> 
                 <a href="#" class='dropdown-toggle' data-toggle='dropdown' style='background-color: rgba(0,0,0,0);'>
                   NSBEmon
                   <span class='caret'></span>
                 </a>
                 <ul class='dropdown-menu' role='menu' style='background-color: rgba(70, 140, 215, .90);'> 
-                  <li>
-                    <%= link_to("About", welcome_about_nsbemon_path) %>
-                  </li>
                   <li>
                     <%= link_to('Training Grounds', nsbemon_main_path) %> 
                   </li>
