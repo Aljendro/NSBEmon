@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :profile, dependent: :destroy
-  has_one :pokemon
   belongs_to :team 
   has_many :record, dependent: :destroy
 
