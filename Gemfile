@@ -47,3 +47,6 @@ gem 'twitter-bootstrap-rails'
 # Use figaro to help keep app secure
 gem 'figaro'
 
+# use sprockets
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
