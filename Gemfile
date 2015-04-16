@@ -1,8 +1,5 @@
 source 'https://rubygems.org'
 
-# Ruby version
-ruby '2.1.3'
-
 # Heroku platform helper
 gem 'rails_12factor'
 
@@ -55,3 +52,6 @@ gem 'figaro'
 # use sprockets
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 
+# Ruby version
+source "https://rubygems.org"
+ruby '2.1.3'
