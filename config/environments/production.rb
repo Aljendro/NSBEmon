@@ -81,7 +81,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Set up the mailer for the app
-  config.action_mailer.default_url_options = { host: 'www.heroku.com'}
+  config.action_mailer.default_url_options = { host: 'nsbemon.herokuapp.com'}
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
