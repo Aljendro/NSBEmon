@@ -4,7 +4,7 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  config.secret_key = '127280c6d006d93e82a641d5d40744a25a8f94732e0577d62bf667713dae67481095dea8159b82f233bfb456f8154d2da26fe46e2afc129e82853ba5e77169f1'
+  # config.secret_key = '127280c6d006d93e82a641d5d40744a25a8f94732e0577d62bf667713dae67481095dea8159b82f233bfb456f8154d2da26fe46e2afc129e82853ba5e77169f1'
    
 
   # ==> Mailer Configuration
@@ -120,7 +120,7 @@ Devise.setup do |config|
   # initial account confirmation) to be applied. Requires additional unconfirmed_email
   # db field (see migrations). Until confirmed, new email is stored in
   # unconfirmed_email column, and copied to email column on successful confirmation.
-  config.reconfirmable = true
+  config.reconfirmable = false
 
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [ :email ]
