@@ -52,6 +52,9 @@ gem 'figaro'
 # use sprockets
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 
+# Add puma
+gem 'puma'
+
 # Ruby version
 source "https://rubygems.org"
 ruby '2.1.3'
