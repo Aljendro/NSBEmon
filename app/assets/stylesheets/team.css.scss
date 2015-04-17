@@ -2,9 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.pictureWrapper.epicredteam {
-    background-image: image-url("epicredteam.jpg");
+.epicredteam {
+    height: 200px;
+    width:  200px;
     background-position: center;  
-    background-size: 200px 200px; 
-    border-radius: 100px; 
+    background-size: 100px 100px; 
+    border-radius: 100%; 
 }
