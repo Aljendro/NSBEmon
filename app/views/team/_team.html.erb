@@ -1,10 +1,20 @@
 <div class="row" style="margin-top: 15px; ">
   <div class="container">
     <div class="col-lg-6">
-      <%= image_tag("epicredteam.jpg", class: 'featurette-image img-responsive pictureWrapper') %>
+      <% if team.name == "Team Rocket" %>
+        <%= image_tag("teamrocket.png", class: 'featurette-image img-responsive pictureWrapper') %>
+      <% elsif team.name == "Team Magma" %>
+        <%= image_tag("teammagma.png", class: 'featurette-image img-responsive pictureWrapper') %>
+      <% elsif team.name == "Team Aqua" %>
+        <%= image_tag("teamaqua.png", class: 'featurette-image img-responsive pictureWrapper') %>
+      <% elsif team.name == "The Elite Four" %>
+        <%= image_tag("elitefour.jpg", class: 'featurette-image img-responsive pictureWrapper') %>
+      <% else %>
+        <%= image_tag("epicredteam.jpg", class: 'featurette-image img-responsive pictureWrapper') %>
+      <% end %>
     </div>
     <div class="col-lg-6">
-      <h1> Team: <%= link_to team.name, team %> </h1>
+      <h1> <%= link_to team.name, team %> </h1>
       <h2> <%= team.description %> </h2>
     </div>
 
