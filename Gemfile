@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
+gem 'spring',  '~> 1.3.4',     group: :development
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -40,7 +40,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-# Use devise for user authentication 
+# Use devise for user authentication
 gem 'devise'
 
 # Use twitter bootstrap as the frontend
@@ -56,5 +56,4 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'puma'
 
 # Ruby version
-source "https://rubygems.org"
-ruby '2.1.3'
+ruby '2.1.7'
