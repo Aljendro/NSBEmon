@@ -1,27 +1,84 @@
 <% if user.confirmed? %>
-    <div class="row">
-      <div class="container">
-        <div class="col-lg-4">
-          <%= image_tag("poketrainers.png", class: 'featurette-image img-responsive pictureWrapper') %>
-        </div>
+  <% if exists? user.profile %>
+    <div class="container">
+      <div class="row">
 
-        <div class="col-lg-4">
-          <h3> User: <%= user.email %> </h3>
-          <h3> Experience: <%= user.experience %> </h3>
-          <h3> Level: <%= user.level %> </h3>
-        </div>
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-8 col-sm-9 col-md-10">
+                  <h5>Trainer <%= user.profile.first_name %> <%= user.profile.last_name %></h5>
+                </div>
+                <div class="col-xs-4 col-sm-3 col-md-2">
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<%= user.profile.first_name%>">
+                    Trainer Profile
+                  </button>
+                </div>
+              </div>
 
-        <% if exists? user.profile %>
-            <div class="col-lg-4">
-              <h3> First Name: <%= user.profile.first_name %> </h3>
-              <h3> Last Name: <%= user.profile.last_name %> </h3>
-              <h3> Graduation Year: <%= user.profile.graduation_year %> </h3>
-              <h3> Major: <%= user.profile.major %></h3>
             </div>
-        <% end %>
+          </div>
+          <div class="panel-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-11">
+                  <h5> Next Level: </h5>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                      <span class="sr-only">40% Complete (success)</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="<%=user.profile.first_name%>" tabindex="-1" role="dialog" aria-labelledby="<%=user.profile.first_name%>">
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Trainer Profile</h4>
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                  <div class="col-sm-4 hidden-xs">
+                    <%= image_tag("poketrainers.png", class: 'featurette-image img-responsive pictureWrapper') %>
+                  </div>
+                  <div class="col-sm-8">
+
+                    <h3> <%= user.profile.first_name %> <%= user.profile.last_name %> </h3>
+                    <h3>
+                      <i class="fa fa-flag"></i>
+                      <%= user.level %>
+                    </h3>
+                    <h3>
+                      <i class="fa fa-flash"></i>
+                      <%= user.experience %>
+                    </h3>
+                    <h3>
+                      <i class="fa fa-book"></i>
+                      <%= user.profile.major %>
+                    </h3>
+                    <h3>
+                      <i class="fa fa-graduation-cap"></i>
+                      <%= user.profile.graduation_year %>
+                    </h3>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+        </div>
       </div>
     </div>
 
     <hr>
+  <% end %>
 <% end %>
