@@ -8,13 +8,24 @@
             <div class="container">
               <div class="row">
                 <div class="col-xs-8 col-sm-9 col-md-10">
-                  <h5>Trainer <%= user.profile.first_name %> <%= user.profile.last_name %></h5>
+                  <% if user.profile.first_name %>
+                    <h5> Trainer <%= user.profile.first_name %> <%= user.profile.last_name %></h5>
+                  <% else %>
+                    <h5> Trainer <%= user.email %> </h5>
+                  <% end %>
                 </div>
                 <div class="col-xs-4 col-sm-3 col-md-2">
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<%= user.profile.first_name%>">
-                    Trainer Profile
-                  </button>
+                    <% if user.profile.first_name %>
+                      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#<%=user.profile.first_name%>">
+                        Trainer Profile
+                      </button>
+                    <% else %>
+                      <button type="button" class="btn btn-danger">
+                        No Profile
+                      </button>
+                    <% end %>
                 </div>
+
               </div>
 
             </div>
@@ -23,10 +34,14 @@
             <div class="container">
               <div class="row">
                 <div class="col-xs-11">
-                  <h5> Next Level: </h5>
+                  <h5> Next Level: <%= user.level + 1 %></h5>
                   <div class="progress">
-                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
-                      <span class="sr-only">40% Complete (success)</span>
+                    <div class="progress-bar progress-bar-success progress-bar-striped active"
+                         role="progressbar"
+                         aria-valuenow="<%= user.experience %>"
+                         aria-valuemin="<%= experience_for_next_level user.level %>"
+                         aria-valuemax="<%= experience_for_next_level (user.level + 1)%>"
+                         style="width: <%=user.experience - experience_for_next_level(user.level)%>%">
                     </div>
                   </div>
                 </div>
